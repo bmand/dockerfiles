@@ -1,8 +1,8 @@
-FROM openjdk:8u201-jre-alpine
+FROM openjdk:8u201-jdk-alpine
 
 MAINTAINER Bertrand Mandrin <bertrandmandrin@gmail.com>
 
-ENV HAWKBIT_VERSION=0.3.0M1 \
+ENV HAWKBIT_VERSION=0.3.0M2 \
     HAWKBIT_HOME=/opt/hawkbit \
     JAR_FILE=hawkbit-update-server.jar
 
@@ -12,7 +12,7 @@ EXPOSE 8080
 RUN set -x \
     && apk add --no-cache gnupg unzip \
     && apk add --no-cache libressl wget \
-    && apk add --no-cache git openjdk8 maven python2
+    && apk add --no-cache git maven python2
 
 RUN mkdir -p $HAWKBIT_HOME \
     && cd $HAWKBIT_HOME
