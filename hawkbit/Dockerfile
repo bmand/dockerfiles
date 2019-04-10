@@ -1,6 +1,6 @@
 FROM openjdk:8u201-jre-alpine
 
-MAINTAINER Cedric Vincent <cvincent@witekio.com>
+MAINTAINER Bertrand Mandrin <bertrandmandrin@gmail.com>
 
 ENV HAWKBIT_VERSION=0.3.0M1 \
     HAWKBIT_HOME=/opt/hawkbit \
