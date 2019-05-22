@@ -1,8 +1,8 @@
-FROM openjdk:8u201-jdk-alpine
+FROM openjdk:8-jdk-alpine
 
 MAINTAINER Bertrand Mandrin <bertrandmandrin@gmail.com>
 
-ENV HAWKBIT_VERSION=0.3.0M2 \
+ENV HAWKBIT_VERSION=0.3.0M3 \
     HAWKBIT_HOME=/opt/hawkbit \
     JAR_FILE=hawkbit-update-server.jar
 
