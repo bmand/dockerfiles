@@ -1,0 +1,39 @@
+From cc36cddcb2fa897bab9ccdb489a4d14df07c510f Mon Sep 17 00:00:00 2001
+From: Bertrand Mandrin <bmandrin@witekio.com>
+Date: Fri, 20 Dec 2019 13:39:20 +0100
+Subject: [PATCH] Add mariadb dependency
+
+---
+ hawkbit-runtime/hawkbit-update-server/pom.xml | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+
+diff --git a/hawkbit-runtime/hawkbit-update-server/pom.xml b/hawkbit-runtime/hawkbit-update-server/pom.xml
+index 242b70f7..8fe40dd4 100644
+--- a/hawkbit-runtime/hawkbit-update-server/pom.xml
++++ b/hawkbit-runtime/hawkbit-update-server/pom.xml
+@@ -59,6 +59,10 @@
+          <groupId>com.microsoft.sqlserver</groupId>
+          <artifactId>mssql-jdbc</artifactId>
+       </dependency>
++      <dependency>
++         <groupId>org.mariadb.jdbc</groupId>
++         <artifactId>mariadb-java-client</artifactId>
++      </dependency>
+ 
+       <!-- Test -->
+       <dependency>
+@@ -76,11 +80,6 @@
+          <artifactId>spring-security-test</artifactId>
+          <scope>test</scope>
+       </dependency>
+-      <dependency>
+-         <groupId>org.mariadb.jdbc</groupId>
+-         <artifactId>mariadb-java-client</artifactId>
+-         <scope>test</scope>
+-      </dependency>
+       <dependency>
+          <groupId>org.eclipse.hawkbit</groupId>
+          <artifactId>hawkbit-repository-test</artifactId>
+-- 
+2.17.1
+
