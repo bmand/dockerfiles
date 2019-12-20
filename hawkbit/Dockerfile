@@ -2,7 +2,7 @@ FROM openjdk:8-jdk-alpine
 
 MAINTAINER Bertrand Mandrin <bertrandmandrin@gmail.com>
 
-ENV HAWKBIT_VERSION=0.3.0M4 \
+ENV HAWKBIT_VERSION=0.3.0M5 \
     HAWKBIT_HOME=/opt/hawkbit \
     JAR_FILE=hawkbit-update-server.jar
 
@@ -26,11 +26,11 @@ RUN cd /hawkbit/hawkbit-repository/hawkbit-repository-jpa/ \
     && ./add_mysql.py \
     && cd -
 
-######### Enable CORS support in Hawkbit
-COPY patch_cors_hawkbit.patch /hawkbit/
+######### Add mariadb dependency in Hawkbit
+COPY 0001-Add-mariadb-dependency.patch /hawkbit/
 RUN cd /hawkbit/ \
-    && dos2unix patch_cors_hawkbit.patch \
-    && git apply --ignore-whitespace patch_cors_hawkbit.patch \
+    && dos2unix 0001-Add-mariadb-dependency.patch \
+    && git apply --ignore-whitespace 0001-Add-mariadb-dependency.patch \
     && cd -
 
 RUN cd hawkbit \
